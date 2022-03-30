@@ -11,21 +11,62 @@ const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "
 const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 
-//Array to store total possible characters for password
-var possibleChar = []
-
-
-//Function to add characters to the possibleChar array
-function includeChar (x) {
-  possibleChar = possibleChar.concat(x);
-}
-
 function generatePassword() {
-  var passwordLength = window.prompt ("How long would you like your password to be?")
-  var numLength = parseInt (passwordLength)
+   
+  //Array to store total possible characters for password
+  var possibleChar = [];
 
-  if (numLength !== passwordLength)
-  
+
+  //Function to add characters to the possibleChar array
+  function includeChar (x) {
+  possibleChar = possibleChar.concat(x);
+  }
+
+  //requests length
+  var passwordLength = window.prompt ("How long would you like your password to be? (8-128)");
+
+  //Checks if the requested length is a number and is between 8-128
+  if (isNaN(passwordLength)) {
+    alert ("You must choose a number.");
+    generatePassword();
+  }else if (passwordLength < 8 || passwordLength > 128) {
+    alert ("Your number must be between 8 and 128 characters.");
+    generatePassword();
+  }else {
+  }
+
+  var uppercaseQuery = window.confirm ("Press OK if password should contain Uppercase letters");
+
+  if (uppercaseQuery) {
+    console.log ("Adding Uppercase")
+  } else {
+    console.log ("Skipping Uppercase")
+  }
+
+  var lowercaseQuery = window.confirm ("Press OK if password should contain Lowercase letters");
+
+  if (lowercaseQuery) {
+    console.log ("Adding Lowercase")
+  } else {
+    console.log ("Skipping Lowercase")
+  }
+
+  var numbersQuery = window.confirm ("Press OK if password should contain Numbers");
+
+  if (numbersQuery) {
+    console.log ("Adding Numbers")
+  } else {
+    console.log ("Skipping Numbers")
+  }
+
+  var specialCharsQuery = window.confirm ("Press OK if password should contain Special Characters");
+
+  if (specialCharsQuery) {
+    console.log ("Adding Special Characters")
+  } else {
+    console.log ("Skipping Special Characters")
+  }
+
 }
 
 //Randomizer 
@@ -50,10 +91,4 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 //test logs
-console.log(specialChars)
-console.log(numberChars)
-console.log(uppercase)
-console.log(lowercase)
-console.log(possibleChar)
-includeChar (numberChars)
-console.log(possibleChar)
+
