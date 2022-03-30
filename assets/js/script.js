@@ -35,48 +35,55 @@ function generatePassword() {
   }else {
   }
 
+  //Building possibleChar array
+  //Asking and adding Uppercase
   var uppercaseQuery = window.confirm ("Press OK if password should contain Uppercase letters");
 
   if (uppercaseQuery) {
-    console.log ("Adding Uppercase")
-  } else {
-    console.log ("Skipping Uppercase")
+    includeChar (uppercase);
+  } else {;
   }
 
+  //Asking and adding Lowercase
   var lowercaseQuery = window.confirm ("Press OK if password should contain Lowercase letters");
 
   if (lowercaseQuery) {
-    console.log ("Adding Lowercase")
+    includeChar (lowercase);
   } else {
-    console.log ("Skipping Lowercase")
   }
 
+  //Asking and adding Numbers
   var numbersQuery = window.confirm ("Press OK if password should contain Numbers");
 
   if (numbersQuery) {
-    console.log ("Adding Numbers")
+    includeChar (numberChars);
   } else {
-    console.log ("Skipping Numbers")
   }
 
+  //Asking and adding Special Characters
   var specialCharsQuery = window.confirm ("Press OK if password should contain Special Characters");
 
   if (specialCharsQuery) {
-    console.log ("Adding Special Characters")
+    includeChar (specialChars);
   } else {
-    console.log ("Skipping Special Characters")
   }
 
+  //Iteration selecting password as an array
+  var possiblePassword = [];
+
+  for (let i = 0; i < passwordLength; i++) {
+    var randomChar = possibleChar[Math.floor(Math.random() * possibleChar.length)];
+    possiblePassword.push(randomChar);
+  }
+
+  //Turn my array into a string
+  var finalPassword = possiblePassword.join("");
+
+  console.log(finalPassword)
 }
 
 //Randomizer 
 //var randomChar = possibleChar[Math.floor(Math.random() * possibleChar.length)];
-
-
-//Iteration for picking random chars for given length
-//for (let i = 0; i < passwordLength.length; i++) {
-    
-//}
 
 // Write password to the #password input
 function writePassword() {
