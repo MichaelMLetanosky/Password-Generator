@@ -16,16 +16,9 @@ function generatePassword() {
   //Array to store total possible characters for password
   var possibleChar = [];
 
-
-  //Function to add characters to the possibleChar array
-  function includeChar (x) {
-  possibleChar = possibleChar.concat(x);
-  }
-
-  //requests length
+  //requests length and checks if the requested length is a number and is between 8-128
   var passwordLength = window.prompt ("How long would you like your password to be? (8-128)");
 
-  //Checks if the requested length is a number and is between 8-128
   if (isNaN(passwordLength)) {
     alert ("You must choose a number.");
     generatePassword();
@@ -40,15 +33,15 @@ function generatePassword() {
   var uppercaseQuery = window.confirm ("Press OK if password should contain Uppercase letters");
 
   if (uppercaseQuery) {
-    includeChar (uppercase);
-  } else {;
+    possibleChar = possibleChar.concat(uppercase);
+  } else {
   }
 
   //Asking and adding Lowercase
   var lowercaseQuery = window.confirm ("Press OK if password should contain Lowercase letters");
 
   if (lowercaseQuery) {
-    includeChar (lowercase);
+    possibleChar = possibleChar.concat(lowercase);
   } else {
   }
 
@@ -56,7 +49,7 @@ function generatePassword() {
   var numbersQuery = window.confirm ("Press OK if password should contain Numbers");
 
   if (numbersQuery) {
-    includeChar (numberChars);
+    possibleChar = possibleChar.concat(numberChars);
   } else {
   }
 
@@ -64,7 +57,7 @@ function generatePassword() {
   var specialCharsQuery = window.confirm ("Press OK if password should contain Special Characters");
 
   if (specialCharsQuery) {
-    includeChar (specialChars);
+    possibleChar = possibleChar.concat(specialChars);
   } else {
   }
 
@@ -76,10 +69,11 @@ function generatePassword() {
     possiblePassword.push(randomChar);
   }
 
-  //Turn my array into a string
+  //Turn array into a string
   var finalPassword = possiblePassword.join("");
 
-  console.log(finalPassword)
+  console.log(finalPassword);
+  return finalPassword;
 }
 
 //Randomizer 
