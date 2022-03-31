@@ -72,12 +72,8 @@ function generatePassword() {
   //Turn array into a string
   var finalPassword = possiblePassword.join("");
 
-  console.log(finalPassword);
   return finalPassword;
 }
-
-//Randomizer 
-//var randomChar = possibleChar[Math.floor(Math.random() * possibleChar.length)];
 
 // Write password to the #password input
 function writePassword() {
@@ -85,11 +81,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-//test logs
-
