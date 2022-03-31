@@ -32,10 +32,10 @@ function generatePassword() {
 
   if (isNaN(passwordLength)) {
     alert ("You must choose a number.");
-    generatePassword();
+    return;
   }else if (passwordLength < 8 || passwordLength > 128) {
     alert ("Your number must be between 8 and 128 characters.");
-    generatePassword();
+    return;
   }else {
   }
 
@@ -70,6 +70,13 @@ function generatePassword() {
   if (specialCharsQuery) {
     possibleChar = possibleChar.concat(specialChars);
   } else {
+  }
+
+  //Check that possibleChar array has characters
+  if (possibleChar.length == 0) {
+    window.alert ("Must include at least one set of characters")
+    return;
+  }else{
   }
 
   //Iteration selecting password as an array
