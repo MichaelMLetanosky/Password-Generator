@@ -23,9 +23,6 @@ const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 
 
 function generatePassword() {
-   
-  //Array to store total possible characters for password
-  var possibleChar = [];
 
   //requests length and checks if the requested length is a number and is between 8-128
   var passwordLength = window.prompt ("How long would you like your password to be? (8-128)");
@@ -40,6 +37,9 @@ function generatePassword() {
   }
 
   //Building possibleChar array
+  //Array to store total possible characters for password
+  var possibleChar = [];
+
   //Asking and adding Uppercase
   var uppercaseQuery = window.confirm ("Press OK if password should contain Uppercase letters");
 
