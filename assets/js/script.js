@@ -45,15 +45,13 @@ function generatePassword() {
 
   if (uppercaseQuery) {
     possibleChar = possibleChar.concat(uppercase);
-    } else {
-  }
+    }
 
   //Asking and adding Lowercase
   var lowercaseQuery = window.confirm ("Press OK if password should contain Lowercase letters");
 
   if (lowercaseQuery) {
     possibleChar = possibleChar.concat(lowercase);
-    } else {
   }
 
   //Asking and adding Numbers
@@ -61,7 +59,6 @@ function generatePassword() {
 
   if (numbersQuery) {
     possibleChar = possibleChar.concat(numberChars);
-    } else {
   }
 
   //Asking and adding Special Characters
@@ -69,14 +66,12 @@ function generatePassword() {
 
   if (specialCharsQuery) {
     possibleChar = possibleChar.concat(specialChars);
-    } else {
   }
 
   //Check that possibleChar array has characters
   if (possibleChar.length == 0) {
     window.alert ("Must include at least one set of characters")
     return;
-    } else {
   }
 
   //Iteration selecting password as an array
