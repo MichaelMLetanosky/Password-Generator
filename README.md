@@ -1,5 +1,12 @@
 # 03 JavaScript: Password Generator
 
+Homework #3: Webpage that will generate a random password of requested length 8-128 from the user's choice of uppercase letters, lowercase letters, numbers, and special characters, through window prompts.
+
+Deployed version can be found at https://michaelmletanosky.github.io/password-generator/
+
+![Screenshot of the password generator with a large red button in the center to start the program and a field above it for the outcome](./assets/images/readMeScreenShot.png)
+
+
 ## Your Task
 
 This week’s homework requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
